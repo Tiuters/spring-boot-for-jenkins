@@ -11,7 +11,7 @@ pipeline {
         stage("foo") {
             steps {
                 script {
-                    env.FILENAME = 'dokerand/spring-with-controller:03'
+                    env.FILENAME = 'dokerand/spring-with-controller:latest'
                 }
                 echo "****************************************************************************************************"
                 echo "${env.FILENAME}"
