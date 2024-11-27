@@ -38,8 +38,8 @@ pipeline {
             steps {
                 bat "docker stop spring-from-jenkins"
                 bat "docker rm spring-from-jenkins"
-                bat "docker rmi dokerand/spring-with-controller:latest"
-                bat "docker run -d --name spring-from-jenkins -p 8081:8081 dokerand/spring-with-controller:latest"
+                bat "docker rmi dokerand/spring-with-controller:1"
+                bat "docker run -d --name spring-from-jenkins -p 8081:8081 dokerand/spring-with-controller:1"
             }
         }
     }
