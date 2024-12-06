@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <sonar.java.libraries>target/classes</sonar.java.libraries>
+        <sonar.java.libraries>.</sonar.java.libraries>
     </properties>
 
     <dependencies>
