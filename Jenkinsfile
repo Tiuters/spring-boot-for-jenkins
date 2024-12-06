@@ -11,6 +11,13 @@ pipeline {
                 echo "${env.FILENAME}"
             }
         }
+        stage("Scan with SonarQube"){
+            steps{
+                withSonarQubeEnv(installationName: 'my-sonar'){
+                    bat "mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:5.0.0.4389:sonar"
+                }
+            }
+        }
         stage('Build JAR') {
             steps {
                 bat "mvn clean package spring-boot:repackage"
