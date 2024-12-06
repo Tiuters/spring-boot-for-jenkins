@@ -11,6 +11,13 @@ pipeline {
                 echo "${env.FILENAME}"
             }
         }
+        stage("Scan"){
+            steps{
+                withSonarQubeEnv(installationName: 'my-sonar'){
+                    bat "mvn clean sonar:sonar"
+                }
+            }
+        }
         stage('Build JAR') {
             steps {
                 bat "mvn clean package spring-boot:repackage"
